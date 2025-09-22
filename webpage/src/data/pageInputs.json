@@ -1,0 +1,223 @@
+
+[
+  {
+    "identifier": "navbar",
+    "title": "AquaScape",
+    "links": ["Shop", "About", "Blog", "Contact"],
+    "themeImage": "",
+    "textColor": "black"
+    },
+  {
+    "identifier": "home",
+    "title": "Welcome to Aquascape",
+    "description": "Discover the beauty of underwater landscapes and shop our curated products.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "about",
+    "title": "About Us",
+    "description": "<div>Welcome to Aquascape, your one-stop destination for everything aquatic, located near Tambaram, Chennai, Tamil Nadu.</br>We love fishes as much as you do! That’s why we’ve filled our store with a wide variety of ornamental fishes – from the common favorites to some really unique species you won’t easily find elsewhere.</br>Here you’ll find everything you need for your aquarium:</div><ul><li>Different types of fish tanks – small, medium, and large</li><li>All kinds of accessories like filters, lights, air pumps, and décor</li><li>Fresh and healthy aqua plants to make your tank look natural</li><li>Fish cultures and feeds to keep your pets happy and active</li></ul><div>And the best part? We also provide home delivery, so you can get fishes, tanks, and accessories right at your doorstep without any hassle.</br>Whether you’re setting up your very first aquarium or adding something new to your collection, we’re here to help you with the right guidance and products.</br>At Aquascape, we don’t just sell aquariums – we share the joy of keeping them. Drop by and explore the colorful world under water!</div>",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "account",
+    "title": "My Account",
+    "description": "Manage your orders, wishlist, and profile.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "blog",
+    "title": "Blog",
+    "description": "Read the latest articles and tips.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "cart",
+    "title": "Shopping Cart",
+    "description": "Review and manage your selected products.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "checkout",
+    "title": "Checkout",
+    "description": "Complete your purchase securely.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "contact",
+    "title": "Contact Us",
+    "description": "Get in touch with our support team.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "faq",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "policy",
+    "title": "Shipping, Delivery & Return Policy",
+    "description": "Read our shipping and return policies.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "productDetail",
+    "title": "Product Details",
+    "description": "View detailed information about products.",
+    "themeColor": "#fcfdfdff",
+    "themeImage": "",
+    "textColor": "black"
+  },
+  {
+    "identifier": "shop",
+    "title": "Shop",
+    "description": "Browse and purchase products.",
+    "themeColor": "",
+    "themeImage": "",
+    "textColor": "black",
+    "categories": {"Fish & Plants": {"bgColor": "#FCFBE5", "img":"/src/assets/beta_fish.png"}, 
+                  "Tanks & Fish Bowls": {"bgColor": "#6EC1E4", "img":"/src/assets/Fish_cartoon.png"}, 
+                  "Aquarium Accessories": {"bgColor": "#FDF2E7", "img":"/src/assets/simple_fish_sea.png"}},
+    "products": [
+      {
+        "name": "Neon Tetra",
+        "image": "/src/assets/neon-tetra.jpg",
+        "cost": 2.5,
+        "discount": 0.2,
+        "amountAfterDiscount": 2.0,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Guppy",
+        "image": "/src/assets/guppy.jpg",
+        "cost": 3.0,
+        "discount": 0.3,
+        "amountAfterDiscount": 2.7,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Goldfish",
+        "image": "/src/assets/goldfish.jpg",
+        "cost": 5.0,
+        "discount": 0.5,
+        "amountAfterDiscount": 4.5,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Betta",
+        "image": "/src/assets/beta.jpeg",
+        "cost": 6.0,
+        "discount": 0.5,
+        "amountAfterDiscount": 5.5,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Angelfish",
+        "image": "/src/assets/angle.jpg",
+        "cost": 8.0,
+        "discount": 1.0,
+        "amountAfterDiscount": 7.0,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Zebra Danio",
+        "image": "/src/assets/zebra.jpg",
+        "cost": 2.0,
+        "discount": 0.2,
+        "amountAfterDiscount": 1.8,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Molly",
+        "image": "/src/assets/molly.jpg",
+        "cost": 3.5,
+        "discount": 0.5,
+        "amountAfterDiscount": 3.0,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Oscar",
+        "image": "/src/assets/oscar.jpg",
+        "cost": 15.0,
+        "discount": 2.0,
+        "amountAfterDiscount": 13.0,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Discus",
+        "image": "/src/assets/discus.jpg",
+        "cost": 25.0,
+        "discount": 5.0,
+        "amountAfterDiscount": 20.0,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Corydoras Catfish",
+        "image": "/src/assets/corydarascatfish.jpeg",
+        "cost": 4.0,
+        "discount": 0.5,
+        "amountAfterDiscount": 3.5,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Nano Glass Aquarium",
+        "image": "/src/assets/Nano_Glass_Aquarium.jpg",
+        "cost": 45.0,
+        "discount": 0.1,
+        "amountAfterDiscount": 40.5,
+        "category": "Tanks & Fish Bowls"
+      },
+      {
+        "name": "Java Fern",
+        "image": "/src/assets/java_fern.jpg",
+        "cost": 5.0,
+        "discount": 0.15,
+        "amountAfterDiscount": 4.25,
+        "category": "Fish & Plants"
+      },
+      {
+        "name": "Aquarium Filter Pump",
+        "image": "/src/assets/aquarium_filter_pump.jpg",
+        "cost": 18.0,
+        "discount": 0.05,
+        "amountAfterDiscount": 17.1,
+        "category": "Aquarium Accessories"
+      },
+      {
+        "name": "Premium Fish Food",
+        "image": "/src/assets/premium_fish_food.jpg",
+        "cost": 4.5,
+        "discount": 0.1,
+        "amountAfterDiscount": 4.05,
+        "category": "Aquarium Accessories"
+      },
+      {
+        "name": "Anti-Fungal Medicine",
+        "image": "/src/assets/anti-fungal_medicine.jpg",
+        "cost": 7.0,
+        "discount": 0.25,
+        "amountAfterDiscount": 5.25,
+        "category": "Aquarium Accessories"
+      }
+    ]
+  }
+]

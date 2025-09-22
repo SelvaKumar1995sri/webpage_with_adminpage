@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Neon Tetra",
+    "category": "Fish",
+    "subcategory": "Freshwater",
+    "price": 2.5,
+    "description": "A small, colorful freshwater fish perfect for community tanks.",
+    "image": "/images/neon-tetra.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Marine Clownfish",
+    "category": "Fish",
+    "subcategory": "Marine",
+    "price": 8.0,
+    "description": "Popular marine fish, known for their symbiotic relationship with anemones.",
+    "image": "/images/clownfish.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Nano Glass Aquarium",
+    "category": "Aquariums",
+    "subcategory": "Nano",
+    "price": 45.0,
+    "description": "Compact glass aquarium, ideal for desktops and small spaces.",
+    "image": "/images/nano-aquarium.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Java Fern",
+    "category": "Plants",
+    "subcategory": "Live",
+    "price": 5.0,
+    "description": "Hardy live plant, great for beginners and aquascaping.",
+    "image": "/images/java-fern.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Aquarium Filter Pump",
+    "category": "Accessories",
+    "subcategory": "Filters",
+    "price": 18.0,
+    "description": "Efficient filter pump for clean and healthy water.",
+    "image": "/images/filter-pump.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Premium Fish Food",
+    "category": "Fish Food",
+    "subcategory": "Dry",
+    "price": 4.5,
+    "description": "Nutritious dry food suitable for most aquarium fish.",
+    "image": "/images/fish-food.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Anti-Fungal Medicine",
+    "category": "Medicines & Care",
+    "subcategory": "Anti-Fungal",
+    "price": 7.0,
+    "description": "Effective treatment for common fish fungal infections.",
+    "image": "/images/anti-fungal.jpg"
+  }
+]
