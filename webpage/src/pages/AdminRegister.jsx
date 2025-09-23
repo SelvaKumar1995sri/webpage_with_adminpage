@@ -43,52 +43,152 @@ function AdminRegister() {
   };
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: '#e0e0e0',
-      color: '#111',
-    }}>
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle at 60% 40%, #6db3f2 0%, #1e3c72 100%)', color: '#fff' }}>
       <div style={{
-        background: '#fff',
-        padding: '2rem 2.5rem',
-        borderRadius: '12px',
-        boxShadow: '0 2px 16px rgba(0,0,0,0.08)',
-        minWidth: 350,
+        background: 'rgba(255,255,255,0.08)',
+        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
+        borderRadius: 24,
+        padding: '48px 40px 40px 40px',
+        minWidth: 370,
+        maxWidth: 400,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       }}>
-        <h2 style={{ textAlign: 'center', color: '#111', marginBottom: 24 }}>Admin Register</h2>
-        <form onSubmit={handleRegister} className="p-3" style={{ textAlign: 'center' }}>
-          <div className="mb-3">
-            <label style={{ color: '#111' }}>Username</label>
-            <input className="form-control" style={{ background: '#fff', color: '#111' }} value={username} onChange={e => setUsername(e.target.value)} required />
+        <div style={{
+          width: 90,
+          height: 90,
+          borderRadius: '50%',
+          background: 'rgba(255,255,255,0.18)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: 24,
+        }}>
+          <svg width="48" height="48" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 8-4 8-4s8 0 8 4" />
+          </svg>
+        </div>
+        <div style={{ letterSpacing: 3, fontSize: 22, fontWeight: 400, marginBottom: 32, color: '#fff', textAlign: 'center' }}>CUSTOMER REGISTER</div>
+        <form onSubmit={handleRegister} style={{ width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 18, borderBottom: '1px solid #fff', paddingBottom: 4 }}>
+            <span style={{ fontSize: 18, marginRight: 10, color: '#fff' }}>👤</span>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: '#fff',
+                fontSize: 16,
+                flex: 1,
+                padding: '8px 0',
+              }}
+              required
+            />
           </div>
-          <div className="mb-3">
-            <label style={{ color: '#111' }}>Password</label>
-            <input type="password" className="form-control" style={{ background: '#fff', color: '#111' }} value={password} onChange={e => setPassword(e.target.value)} required />
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 18, borderBottom: '1px solid #fff', paddingBottom: 4 }}>
+            <span style={{ fontSize: 18, marginRight: 10, color: '#fff' }}>🔒</span>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: '#fff',
+                fontSize: 16,
+                flex: 1,
+                padding: '8px 0',
+              }}
+              required
+            />
           </div>
-          <div className="mb-3">
-            <label style={{ color: '#111' }}>Email</label>
-            <input type="email" className="form-control" style={{ background: '#fff', color: '#111' }} value={email} onChange={e => setEmail(e.target.value)} required />
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 18, borderBottom: '1px solid #fff', paddingBottom: 4 }}>
+            <span style={{ fontSize: 18, marginRight: 10, color: '#fff' }}>✉️</span>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: '#fff',
+                fontSize: 16,
+                flex: 1,
+                padding: '8px 0',
+              }}
+              required
+            />
           </div>
-          <div className="mb-3">
-            <label style={{ color: '#111' }}>First Name</label>
-            <input className="form-control" style={{ background: '#fff', color: '#111' }} value={firstName} onChange={e => setFirstName(e.target.value)} />
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 18, borderBottom: '1px solid #fff', paddingBottom: 4 }}>
+            <span style={{ fontSize: 18, marginRight: 10, color: '#fff' }}>📝</span>
+            <input
+              type="text"
+              placeholder="First Name"
+              value={firstName}
+              onChange={e => setFirstName(e.target.value)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: '#fff',
+                fontSize: 16,
+                flex: 1,
+                padding: '8px 0',
+              }}
+            />
           </div>
-          <div className="mb-3">
-            <label style={{ color: '#111' }}>Last Name</label>
-            <input className="form-control" style={{ background: '#fff', color: '#111' }} value={lastName} onChange={e => setLastName(e.target.value)} />
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 18, borderBottom: '1px solid #fff', paddingBottom: 4 }}>
+            <span style={{ fontSize: 18, marginRight: 10, color: '#fff' }}>📝</span>
+            <input
+              type="text"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: '#fff',
+                fontSize: 16,
+                flex: 1,
+                padding: '8px 0',
+              }}
+            />
           </div>
-          {error && <div className="alert alert-danger mt-3">{error}</div>}
-          {success && <div className="alert alert-success mt-3">Registration successful! Redirecting to login...</div>}
-          <button className="btn btn-primary w-100" style={{ marginTop: '1rem' }} type="submit">
-            Register
-          </button>
+          {error && <div style={{ color: '#ffb3b3', marginBottom: 12, textAlign: 'center' }}>{error}</div>}
+          {success && <div style={{ color: '#b3ffb3', marginBottom: 12, textAlign: 'center' }}>Registration successful! Redirecting to login...</div>}
+          <button type="submit" style={{
+            width: '100%',
+            background: 'rgba(0,0,40,0.25)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: 6,
+            padding: '12px 0',
+            fontSize: 16,
+            fontWeight: 600,
+            letterSpacing: 2,
+            marginTop: 8,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            cursor: 'pointer',
+            transition: 'background 0.2s',
+          }}>REGISTER</button>
         </form>
-        <div className="mt-3" style={{ textAlign: 'center' }}>
-          <span>Already have an account? </span>
-          <Link to="/admin">Login here</Link>
+        <div style={{ marginTop: 24, textAlign: 'center', color: '#fff', fontSize: 15 }}>
+          Already have an account?{' '}
+          <Link to="/admin" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>Login here</Link>
         </div>
       </div>
     </div>
