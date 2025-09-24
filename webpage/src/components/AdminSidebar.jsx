@@ -3,14 +3,7 @@ import { Link } from 'react-router-dom';
 
 const sidebarItems = [
   { label: 'Dashboard', icon: '🏠', path: '/admin_dashboard' },
-  {
-    label: 'Products', icon: '📦', path: '/admin_dashboard/products',
-    subItems: [
-      { label: 'Product List', path: '/admin_dashboard/products' },
-      { label: 'Add Product', path: '/admin_dashboard/products/add' },
-      // Edit Product is not shown in sidebar, only navigated to directly
-    ]
-  },
+  { label: 'Products', icon: '📦', path: '/admin_dashboard/products' },
   { label: 'Flash Sales', icon: '⚡', path: '/admin_dashboard/flash-sales' },
   { label: 'Customers', icon: '👥', path: '/admin_dashboard/customers' },
   { label: 'Order List', icon: '📝', path: '/admin_dashboard/orders' },
@@ -32,34 +25,12 @@ function AdminSidebar({ onLogout }) {
         <nav>
           {sidebarItems.map(item => (
             <div key={item.label}>
-              {item.subItems ? (
-                <>
-                  <div
-                    style={{ display: 'flex', alignItems: 'center', padding: '12px 0', fontWeight: 500, color: '#111', cursor: 'pointer', borderRadius: 8, transition: 'background 0.2s' }}
-                    onClick={() => handleMenuClick(item.label)}
-                  >
-                    <span style={{ fontSize: 20, marginRight: 16 }}>{item.icon}</span>
-                    {item.label}
-                    <span style={{ marginLeft: 'auto', fontSize: 14 }}>{openMenu === item.label ? '▲' : '▼'}</span>
-                  </div>
-                  {openMenu === item.label && (
-                    <div style={{ marginLeft: 32 }}>
-                      {item.subItems.map(sub => (
-                        <Link key={sub.label} to={sub.path} style={{ textDecoration: 'none' }}>
-                          <div style={{ padding: '8px 0', color: '#111', fontWeight: 400 }}>{sub.label}</div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </>
-              ) : (
-                <Link to={item.path} style={{ textDecoration: 'none' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', padding: '12px 0', fontWeight: 500, color: '#111', cursor: 'pointer', borderRadius: 8, transition: 'background 0.2s' }}>
-                    <span style={{ fontSize: 20, marginRight: 16 }}>{item.icon}</span>
-                    {item.label}
-                  </div>
-                </Link>
-              )}
+              <Link to={item.path} style={{ textDecoration: 'none' }}>
+                <div style={{ display: 'flex', alignItems: 'center', padding: '12px 0', fontWeight: 500, color: '#111', cursor: 'pointer', borderRadius: 8, transition: 'background 0.2s' }}>
+                  <span style={{ fontSize: 20, marginRight: 16 }}>{item.icon}</span>
+                  {item.label}
+                </div>
+              </Link>
             </div>
           ))}
         </nav>

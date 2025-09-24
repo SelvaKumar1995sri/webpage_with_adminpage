@@ -36,7 +36,7 @@ function App() {
   return (
     <CartProvider>
       <Router>
-        <Box sx={{ width: "100vw", minHeight: "100vh", overflowX: "hidden", background: 'radial-gradient(circle at 60% 40%, #6db3f2 0%, #1e3c72 100%)' }}>
+        <Box sx={{ width: "100vw", Height: "70vh", overflowX: "hidden", background: 'radial-gradient(circle at 60% 40%, #6db3f2 0%, #1e3c72 100%)' }}>
           {/* Only show Navbar on customer pages */}
           {!(window.location.pathname.startsWith('/admin_dashboard') || window.location.pathname.startsWith('/admin')) && <Navbar />}
           <Box

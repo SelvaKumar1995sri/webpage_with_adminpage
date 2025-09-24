@@ -41,7 +41,7 @@ function AdminDashboard() {
 
   // --- Dashboard UI ---
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: '#f7f8fa' }}>
+  <div style={{ display: 'flex', background: '#f7f8fa' }}>
       {/* Main Content */}
       <div style={{ flex: 1, padding: 32, color: '#111' }}>
         {/* Topbar */}
@@ -88,7 +88,7 @@ function AdminDashboard() {
         <div style={{ background: '#fff', borderRadius: 16, padding: 0, boxShadow: '0 2px 8px #f0f1f2', marginBottom: 32, overflow: 'hidden' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 24px 0 24px' }}>
             <div style={{ fontWeight: 600, fontSize: 18 }}>Top products</div>
-            <a href="#" style={{ color: '#5b6bfa', fontWeight: 500, fontSize: 15, textDecoration: 'none' }}>View all</a>
+            <a href="#" style={{ color: '#5b6bfa', fontWeight: 500, fontSize: 15, textDecoration: 'none' }} onClick={() => navigate('/admin_dashboard/products')}>View all</a>
           </div>
           <div style={{ padding: 24, paddingTop: 12 }}>
             {error && <div className="alert alert-danger">{error}</div>}
