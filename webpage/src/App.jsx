@@ -27,6 +27,7 @@ import Customers from "./pages/Customers";
 import Orders from "./pages/Orders";
 import Report from "./pages/Report";
 import Settings from "./pages/Settings";
+import AdminLandingPage from "./pages/AdminLandingPage";
 
 function App() {
   const handleLogout = () => {
@@ -106,6 +107,11 @@ function App() {
               <Route path="/admin_dashboard/settings" element={
                 <AdminLayout onLogout={handleLogout}>
                   <Settings />
+                </AdminLayout>
+              } />
+              <Route path="/admin_dashboard/landing-page" element={
+                <AdminLayout onLogout={handleLogout}>
+                  <AdminLandingPage />
                 </AdminLayout>
               } />
             </Routes>

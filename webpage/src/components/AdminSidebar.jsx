@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const sidebarItems = [
   { label: 'Dashboard', icon: '🏠', path: '/admin_dashboard' },
   { label: 'Products', icon: '📦', path: '/admin_dashboard/products' },
+  { label: 'Landing Page', icon: '🌐', path: '/admin_dashboard/landing-page' },
   { label: 'Flash Sales', icon: '⚡', path: '/admin_dashboard/flash-sales' },
   { label: 'Customers', icon: '👥', path: '/admin_dashboard/customers' },
   { label: 'Order List', icon: '📝', path: '/admin_dashboard/orders' },
