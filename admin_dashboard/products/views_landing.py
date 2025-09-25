@@ -6,4 +6,4 @@ from .serializers_landing import LandingPageSerializer
 class LandingPageViewSet(viewsets.ModelViewSet):
     queryset = LandingPage.objects.all().order_by('-updated_at')
     serializer_class = LandingPageSerializer
-    permission_classes = [IsAdminUser]
+    # No permission_classes: open to all (no auth)

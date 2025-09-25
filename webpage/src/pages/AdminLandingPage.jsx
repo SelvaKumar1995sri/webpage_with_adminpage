@@ -12,8 +12,6 @@ function AdminLandingPage() {
   const [form, setForm] = useState({
     title: '',
     nav_links: [],
-    cart_icon: '',
-    profile_icon: '',
     footer_main: '', // main footer text (row 1)
     footer_columns: ['', ''], // featured/contact (row 2, left/right)
     footer_links: ['', '', ''], // About, Contact, Policies (row 3)
@@ -46,18 +44,16 @@ const labelStyle = {
       const res = await axios.get(`${API_BASE}/landing/`);
       const data = res.data.length ? res.data[0] : null;
       setLanding(data);
-      if (data) {
+      if (data && data.data) {
         setForm({
-          title: data.title || '',
-          nav_links: data.nav_links || [],
-          cart_icon: data.cart_icon || '',
-          profile_icon: data.profile_icon || '',
-          footer_main: data.footer_main || '',
-          footer_columns: data.footer_columns || ['', ''],
-          footer_links: data.footer_links || ['', '', ''],
+          title: data.data.title || '',
+          nav_links: data.data.nav_links || [],
+          footer_main: data.data.footer_main || '',
+          footer_columns: data.data.footer_columns || ['', ''],
+          footer_links: data.data.footer_links || ['', '', ''],
         });
-        setCategories(data.categories || []);
-        setSections(data.sections || []);
+        setCategories(data.data.categories || []);
+        setSections(data.data.sections || []);
       }
     } catch (err) {
       setError('Failed to fetch landing page data');
@@ -95,7 +91,7 @@ const labelStyle = {
     e.preventDefault();
     try {
       const payload = {
-        ...form,
+        title: form.title,
         nav_links: form.nav_links,
         footer_main: form.footer_main,
         footer_columns: form.footer_columns,
@@ -104,9 +100,9 @@ const labelStyle = {
         sections,
       };
       if (landing) {
-        await axios.put(`${API_BASE}/landing/${landing.id}/`, payload);
+        await axios.put(`${API_BASE}/landing/${landing.id}/`, { data: payload });
       } else {
-        await axios.post(`${API_BASE}/landing/`, payload);
+        await axios.post(`${API_BASE}/landing/`, { data: payload });
       }
       setShowForm(false);
       fetchLanding();
@@ -172,13 +168,7 @@ const labelStyle = {
               <button type="button" className="btn btn-secondary btn-sm" onClick={addNavLink}>+ Add Link</button>
             </div>
           </div>
-          {/* Cart/Profile Icons */}
-          <div className="mb-3" style={{ display: 'flex', alignItems: 'center', gap: 24, marginBottom: 18 }}>
-            <label className="form-label" style={{ color: '#111', minWidth: 160, textAlign: 'right', marginBottom: 0 }}>Cart Icon</label>
-            <input type="text" className="form-control" style={{ ...inputStyle, flex: 1, marginRight: 16 }} name="cart_icon" value={form.cart_icon} onChange={handleFormChange} />
-            <label className="form-label" style={{ color: '#111', minWidth: 120, textAlign: 'right', marginBottom: 0 }}>Profile Icon</label>
-            <input type="text" className="form-control" style={{ ...inputStyle, flex: 1 }} name="profile_icon" value={form.profile_icon} onChange={handleFormChange} />
-          </div>
+
           {/* Categories */}
           <div className="mb-3" style={{ display: 'flex', alignItems: 'flex-start', gap: 24, marginBottom: 18 }}>
             <label className="form-label" style={{ color: '#111', minWidth: 160, textAlign: 'right', marginTop: 8 }}>Categories</label>
@@ -256,21 +246,19 @@ const labelStyle = {
             <button className="btn btn-secondary" type="button" onClick={() => setShowForm(false)}>Cancel</button>
           </div>
         </form>
-      ) : landing ? (
+      ) : landing && landing.data ? (
         <div>
-          <div style={{ fontWeight: 600, fontSize: 18 }}>{landing.title}</div>
+          <div style={{ fontWeight: 600, fontSize: 18 }}>{landing.data.title}</div>
           <div style={{ color: '#888', marginBottom: 8 }}>
-            {landing.nav_links && landing.nav_links.map((link, idx) => (
+            {landing.data.nav_links && landing.data.nav_links.map((link, idx) => (
               <span key={idx} style={{ marginRight: 16 }}>{link}</span>
             ))}
-            {landing.cart_icon && <span style={{ marginLeft: 16 }}>{landing.cart_icon}</span>}
-            {landing.profile_icon && <span style={{ marginLeft: 8 }}>{landing.profile_icon}</span>}
           </div>
           {/* Categories */}
           <div style={{ margin: '24px 0' }}>
             <div style={{ fontWeight: 500, marginBottom: 8 }}>Categories:</div>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              {landing.categories && landing.categories.map((cat, idx) => (
+              {landing.data.categories && landing.data.categories.map((cat, idx) => (
                 <div key={idx} style={{ background: cat.bg_color || '#eee', borderRadius: 8, padding: 12, minWidth: 120, textAlign: 'center' }}>
                   <img src={cat.image} alt={cat.name} style={{ width: 48, height: 48, objectFit: 'cover', borderRadius: 8, marginBottom: 8 }} />
                   <div>{cat.name}</div>
@@ -280,7 +268,7 @@ const labelStyle = {
           </div>
           {/* Sections */}
           <div style={{ margin: '24px 0' }}>
-            {landing.sections && landing.sections.map((sec, idx) => (
+            {landing.data.sections && landing.data.sections.map((sec, idx) => (
               <div key={idx} style={{ marginBottom: 24 }}>
                 <div style={{ fontWeight: 500, fontSize: 17, marginBottom: 8 }}>{sec.title}</div>
                 <pre style={{ background: '#f7f8fa', padding: 12, borderRadius: 8, fontSize: 14 }}>{JSON.stringify(sec.content, null, 2)}</pre>
@@ -288,7 +276,7 @@ const labelStyle = {
             ))}
           </div>
           {/* Footer */}
-          <div style={{ marginTop: 32, color: '#888', fontSize: 15 }}>{landing.footer_content}</div>
+          <div style={{ marginTop: 32, color: '#888', fontSize: 15 }}>{landing.data.footer_content}</div>
         </div>
       ) : (
         <div style={{ color: '#888', fontSize: 16, textAlign: 'center', margin: 48 }}>There is no landing page.</div>
